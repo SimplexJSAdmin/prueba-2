@@ -1,0 +1,87 @@
+{%  extends 'base.html' %}
+{% block section %}
+<div class="row justify-content-center pt-3">
+    <div class="col-md-12">
+        <div class="card">
+            <dv class="card-header">
+                <h5 class="text-center"> <strong> MODULO PARÁMETROS </strong></h5>
+                <p class="text-center">En esta sección podrá modificar los parámetros asociados a cada una de las entidades de seguridad social.
+                    <br>
+                    <strong>Recuerde que estos parámetros afectan el modelo de liquidaciones</strong>
+                </p>
+            </dv>
+        </div>
+    </div>
+</div>
+
+
+<div class="row pt-5">
+    <div class="col-md-12 justify-content-center">
+        <div class="card-group justify-content-center">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Concepto: EPS</h5>
+                    <p class="card-text">Entra en esta sección si necesitas gestionar el porcentaje de descuento por concepto de EPS en función del salario</p>
+                </div>
+                <div class="card-footer justify-content-end">
+                    <a href="parametros/eps" class="btn btn-info">Entrar al módulo <i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Concepto: AFP</h5>
+                    <p class="card-text">Entra en esta sección si necesitas gestionar el porcentaje de descuento por concepto de AFP en función del salario</p>
+                </div>
+                <div class="card-footer">
+                    <a href="parametros/afp" class="btn btn-info">Entrar al módulo <i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Concepto: FSP</h5>
+                    <p class="card-text">Entra en esta sección si necesitas gestionar el porcentaje de descuento por concepto de FSP en función del salario</p>
+                </div>
+                <div class="card-footer">
+                    <a href="parametros/fsp" class="btn btn-info">Entrar al módulo <i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Concepto: ARL</h5>
+                    <p class="card-text">Entra en esta sección si necesitas gestionar el porcentaje de descuento por concepto de ARL en función del riesgo</p>
+                </div>
+                <div class="card-footer">
+                    <a href="parametros/arl" class="btn btn-info">Entrar al módulo <i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Concepto: SENA</h5>
+                    <p class="card-text">Entra en esta sección si necesitas gestionar el porcentaje de descuento por concepto de SENA en función del salario</p>
+                </div>
+                <div class="card-footer">
+                    <a href="parametros/sena" class="btn btn-info">Entrar al módulo <i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Concepto: ICBF</h5>
+                    <p class="card-text">Entra en esta sección si necesitas gestionar el porcentaje de descuento por concepto de ICBF en función del salario</p>
+                </div>
+                <div class="card-footer">
+                    <a href="parametros/icbf" class="btn btn-info">Entrar al módulo <i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Concepto: Caja</h5>
+                    <p class="card-text">Entra en esta sección si necesitas gestionar el porcentaje de descuento por concepto de caja en función del salario</p>
+                </div>
+                <div class="card-footer">
+                    <a href="parametros/caja" class="btn btn-info">Entrar al módulo <i class="fa-solid fa-circle-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

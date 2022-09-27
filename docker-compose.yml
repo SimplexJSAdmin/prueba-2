@@ -1,0 +1,47 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  web:
+    build: DesarrolloWeb/
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./DesarrolloWeb/:/code
+    ports:
+      - "8000:8000"
+      - "8866:8866"
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - DOMAIN_BACK_1=http://172.21.0.4
+      - DOMAIN_BACK_2=http://172.21.0.3
+      - ROOT_USER_BACK_2=root1
+      - ROOT_PASSWORD_BACK_2=root1
+    depends_on:
+      - db
+  back2:
+    build: modulo-preprocesado-datos-JS/
+    command: python manage.py runserver 0.0.0.0:8001
+    volumes:
+      - ./modulo-preprocesado-datos-JS/:/code
+    ports:
+      - "8001:8001"
+    environment:
+    - POSTGRES_NAME=postgres
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=postgres
+    - DOMAIN_BACK_1=http://172.21.0.4:8000
+    - DOMAIN_BACK_2=http://172.21.0.3:8001
+    depends_on:
+      - db
+

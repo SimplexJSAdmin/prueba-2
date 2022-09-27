@@ -1,0 +1,41 @@
+{%extends 'base.html'%}
+{%block section%}
+<div class="row justify-content-center pt-3">
+    <div class="col-md-12">
+        <div class="card">
+            <dv class="card-header">
+                <h5 class="text-center"> <strong> {{parameter_type|upper}} </strong></h5>
+                <p class="text-center">Desde este modulo podras gestionar todo lo relacionado con los parametros de la categoria: {{parameter_type|upper}}
+                    <br>
+                    <strong>Recuerde que solo se pueden modificar los parámetros, no es posible crear ni eliminar</strong>
+                </p>
+            </dv>
+        </div>
+    </div>
+</div>
+
+
+<div class="row pt-5">
+    <div class="col-md-12 justify-content-center">
+        {%if parametros %}
+        <div class="card">
+            <div class="card-header">
+            </div>
+            {% if tabla_basica %}
+            {%include 'parametros/tablas/tabla_basica.html'%}
+            {% endif %}
+            {% if tabla_topes %}
+            {%include 'parametros/tablas/tabla_tope_salarial.html'%}
+            {% endif %}
+            {% if tabla_riesgos %}
+            {% include 'parametros/tablas/tabla_nivel_riesgo.html'%}
+            {% endif %}
+        </div>
+        {% else %}
+        <div class="alert alert-info">
+            <p class="text-center"> No se han creado conceptos para {{parameter_type|upper}} aun.</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{%endblock%}

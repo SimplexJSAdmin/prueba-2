@@ -1,0 +1,57 @@
+{%  extends 'base.html' %}
+{% block section %}
+<div class="row pt-2 pb-2 border bg-light mt-4 border-info" style="border-radius: 25px">
+    <div class="col-md-9 m-auto ">
+        <h3 class="text-center">Conceptos internos disponibles </h3>
+        <p>Acá podras visualizar los conceptos internos disponibles en la plataforma </p>
+    </div>
+</div>
+<div class="row pt-5">
+    <div class="col-md-12 justify-content-center">
+        {%if conceptos_internos %}
+        <div class="card">
+            <div class="card-header">
+                <div class="row justify-content-end">
+                    <div class="col-md-3">
+                        <a class="btn btn-outline-info" style="background-color: white  " href="{% url 'conceptos_internos_crear' %}">Crear nuevo concepto interno <i class="fa-solid fa-circle-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Conceptos disponibles</h5>
+                <table class="table table-bordered border-info">
+                    <thead>
+                    <tr class="table-primary">
+                        <th class="text-center">Id</th>
+                        <th class="text-center">Descripción del concepto</th>
+                        <th class="text-center">Tipo de concepto</th>
+                        <th class="text-center w-50">Acciones</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for concepto in conceptos_internos %}
+                    <tr>
+                        <td class="text-center">{{concepto.id}}</td>
+                        <td class="text-center">{{concepto.desc_concepto}}</td>
+                        <td class="text-center">{{concepto.tipo_concepto}}</td>
+                        <td>
+                            <div class="row justify-content-center">
+                                <div class="col-md-2"><button class="btn btn-outline-danger"><i class="fa-regular fa-trash-can"></i>Eliminar</button></div>
+                                <div class="col-md-2"><button class="btn btn-outline-success"><i class="fa-solid fa-keyboard"></i>Modificar</button></div>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% else %}
+        <div class="alert alert-info">
+            <p class="text-center"> No se han creado empresas aun. <a href="{%url 'empresa_crear'%}">Crea una</a></p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+[
+  {
+    "model": "liquidaciones.periodo",
+    "pk": 202206,
+    "fields":{
+      "year_periodo": "2022",
+      "mes_periodo": "06"
+    }
+  },
+  {
+    "model": "liquidaciones.periodo",
+    "pk": 202207,
+    "fields":{
+      "year_periodo": "2022",
+      "mes_periodo": "07"
+    }
+  }
+]
